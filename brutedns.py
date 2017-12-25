@@ -1,3 +1,6 @@
+
+###Dev by: ArthurHMES###
+
 import dns.resolver
 import sys
 try:
@@ -5,7 +8,7 @@ try:
    nome_arquivo = sys.argv[2]
 except:
     print "Argumentos invalidos!"
-    print "Como usar: dnsbrute.py <dominio> <wordlist.txt>"
+    print '\033[0;31m'+ "Como usar: dnsbrute.py <dominio> <wordlist.txt>"
     sys.exit(1)
 try:
     arq = open(nome_arquivo)
@@ -15,10 +18,14 @@ except:
       sys.exit(1)
 
 for lista in listas:
+
+
     subdom = lista + "." + dominio
     try:
         resultados = dns.resolver.query(subdom, "a")
         for resultado in resultados:
             print subdom, resultado
+
     except:
         pass
+###Dev by: ArthurHMES### 
